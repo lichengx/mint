@@ -1,0 +1,20 @@
+en:
+  activerecord:
+    models:
+      state: "State"
+      role: "Role"
+      visitor_option: "Visitor option"
+      data_type:  "Data type"
+      data_item:  "Data item"
+      picture_type:  "Picture type"
+      state/translation: "Translation"
+    attributes:
+      state:
+        name: "Name"
+        seq:  "Seq"
+        type: "Type"
+        translations: "Translations"
+        users: "Users"
+      state/translation:
+        title: "Title"
+        description: "Description"

@@ -1,0 +1,15 @@
+zh-CN:
+  visitors:
+    index:
+      life_is_short_have_an_affair: '人生苦短， 及时行乐。'
+      get_started_by_telling_us_your_relationship_status: '何欲何求，从这里开始 :'
+      please_select: '请选择'
+      see_your_matches: '查看匹配'
+    new:
+      life_is_short_have_an_affair: '人生苦短， 及时行乐。'
+      get_started_by_telling_us_your_relationship_status: '何欲何求，从这里开始 :'
+      please_select: '请选择'
+      see_your_matches: '查看匹配'
+  admin:
+    flash:
+      access_denied:  "访问被拒绝。"

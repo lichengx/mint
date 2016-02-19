@@ -1,2 +1,4 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'About', page_path('about') %></li>
+<li><%= link_to (t '.about'), page_path('about') %></li>
+<li><%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-CN" %></li>
+<li><%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %></li>

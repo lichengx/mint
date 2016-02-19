@@ -1,0 +1,8 @@
+zh-CN:
+  simple_captcha:
+    placeholder: "请输入图片显示的字符"
+    label: "图片验证码:"
+    refresh_button_text: "刷新"
+    message:
+      default: "验证码与图片显示不匹配"
+      user: "验证码与图片显示不匹配"

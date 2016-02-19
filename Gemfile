@@ -23,7 +23,16 @@ gem 'pundit'
 gem 'simple_form'
 
 # add by lcx
+gem 'rails-i18n'
 gem 'devise-i18n'
+gem 'simple_captcha2'
+gem 'rails_admin'
+gem 'rails_admin-i18n'
+gem 'globalize'
+gem 'rails_admin_globalize_field'
+gem 'paperclip'
+gem 'merit'
+gem 'geocoder'
 # end
 
 group :development do

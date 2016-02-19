@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      type: "Type"
+      type/translation: "Translation"
+    attributes:
+      type:
+        name: "Name"
+        seq:  "Seq"
+        states: "States"
+        translations: "Translations"
+      type/translation:
+        title: "Title"
+        description: "Description"

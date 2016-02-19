@@ -1,0 +1,13 @@
+zh-CN:
+  activerecord:
+    models:
+      user: "用户"
+    attributes:
+      user:
+        name: "用户名"
+        email: "邮件"
+        mobile: "手机号"
+        login: "账号"
+        password: "密码"
+        password_confirmation: "再输入一次"
+        role: "角色"

@@ -1,0 +1,20 @@
+zh-CN:
+  activerecord:
+    models:
+      state: "状态"
+      role: "角色"
+      visitor_option: "访客选择"
+      data_type:  "资料类型"
+      data_item:  "资料项目"
+      picture_type:  "相片类型"
+      state/translation: "翻译"
+    attributes:
+      state:
+        name: "名称"
+        seq:  "序号"
+        type: "类型"
+        translations: "翻译"
+        users: "用户"
+      state/translation:
+        title: "标题"
+        description: "描述"

@@ -1,0 +1,14 @@
+zh-CN:
+  activerecord:
+    models:
+      type: "类型"
+      type/translation: "翻译"
+    attributes:
+      type:
+        name: "名称"
+        seq:  "序号"
+        states: "状态"
+        translations: "翻译"
+      type/translation:
+        title: "标题"
+        description: "描述"

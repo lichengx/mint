@@ -1,0 +1,28 @@
+<style type="text/css">
+    .vertical-center{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<div class="form-group">
+  <label for="simple_captcha">
+    <%= simple_captcha_options[:label] %>
+  </label>
+  <div class="input-group">
+    <div id="simple_captcha_img" class="form-control">
+      <%= simple_captcha_options[:image] %>
+    </div>
+    <%= simple_captcha_options[:field] %>
+    <div class="input-group-addon"><%= simple_captcha_options[:refresh_button] %></div>
+  </div>
+
+</div>
+
+<script>
+    $("#captcha").addClass('form-control ');
+    $("#simple_captcha_img img").addClass('vertical-center');
+</script>
+

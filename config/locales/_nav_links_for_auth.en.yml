@@ -1,0 +1,7 @@
+en:
+  layouts:
+    nav_links_for_auth:
+      sign_in: 'Sign in'
+      sign_up: 'Sign up'
+      sign_out: 'Sign out'
+      edit_account: 'My profile'

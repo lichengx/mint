@@ -1,0 +1,16 @@
+zh-CN:
+  devise:
+    sessions:
+      new:
+        sign_in: '登录'
+        sign_up: '注册'
+        forgot_password: '忘记密码'
+        remember_me: '记住我'
+    registrations:
+      new:
+        sign_up: '注册'
+    passwords:
+      new:
+        forgot_your_password?: '忘记你的密码了吗？'
+        send_password_reset_instructions: '我们将发送密码重置指令。'
+        reset_password: '重置密码'

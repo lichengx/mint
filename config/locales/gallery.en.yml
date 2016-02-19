@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    models:
+      gallery: "Gallery"
+    attributes:
+      gallery:
+        user: "User"
+        picture_type: "Picture type"
+        picture: "Picture"

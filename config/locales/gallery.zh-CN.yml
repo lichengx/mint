@@ -1,0 +1,9 @@
+zh-CN:
+  activerecord:
+    models:
+      gallery: "相册"
+    attributes:
+      gallery:
+        user: "用户"
+        picture_type: "相片类型"
+        picture: "相片"
