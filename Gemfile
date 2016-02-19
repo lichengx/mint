@@ -21,6 +21,11 @@ gem 'mysql2', '~> 0.3.18'
 gem 'puma'
 gem 'pundit'
 gem 'simple_form'
+
+# add by lcx
+gem 'devise-i18n'
+# end
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
