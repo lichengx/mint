@@ -128,8 +128,6 @@ puts '测试用户设定开始---------------'
   User.find_or_create_by!(email: "user#{n}@mint.com") do |user|
     user.password = '11111111'
     user.password_confirmation = '11111111'
-    #user.confirm!
-    user.role=Role.find_by_name('user')
   end
 end
 puts '完成测试用户设定---------------'

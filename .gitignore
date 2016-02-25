@@ -72,7 +72,7 @@ pickle-email-*.html
 
 # Textmate project files
 /*.tmproj
-
+/uploads/
 # vim artifacts
 **.swp
 
