@@ -28,7 +28,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(secure_params)
         format.html { render :edit, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        format.json { render :edit, status: :ok, location: @user }
+        format.js   {render :edit}
       else
         format.html { redirect_to @user}
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -46,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def secure_params
-    params.require(:user).permit(:role, :avatar)
+    params.require(:user).permit(:role, :avatar, :avatar_crop_x, :avatar_crop_y, :avatar_crop_w, :avatar_crop_h)
   end
 
 end

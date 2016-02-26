@@ -89,12 +89,12 @@ section {
   text-align: center;
 }
 .avatar{
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   background-color: #999999;
-  border: 4px solid #CCCCCC;
+  //border: 4px solid #CCCCCC;
   color: #FFFFFF;
-  border-radius: 50%;
+  //border-radius: 50%;
   margin: 5px auto;
   overflow: hidden;
   transition: all 0.2s;
@@ -107,11 +107,11 @@ section {
 .avatar input[type="file"] {
   cursor: pointer;
   display: block;
-  height: 100%;
   left: 0;
   opacity: 0 !important;
   position: absolute;
   top: 0;
+  height: 100%;
   width: 100%;
 }
 

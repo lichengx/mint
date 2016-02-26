@@ -31,6 +31,7 @@ gem 'rails_admin-i18n'
 gem 'globalize'
 gem 'rails_admin_globalize_field'
 gem 'paperclip'
+gem 'papercrop'
 gem 'merit'
 gem 'geocoder'
 # end

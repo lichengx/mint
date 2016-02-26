@@ -130,6 +130,10 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    papercrop (0.3.0)
+      jquery-rails
+      paperclip (>= 3.4)
+      rails (>= 3.1)
     parser (2.3.0.6)
       ast (~> 2.2)
     powerpack (0.1.1)
@@ -270,6 +274,7 @@ DEPENDENCIES
   merit
   mysql2 (~> 0.3.18)
   paperclip
+  papercrop
   pry-rails
   pry-rescue
   puma

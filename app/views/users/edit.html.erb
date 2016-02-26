@@ -1,38 +1,38 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-4">
-      <h4 class="info">Me</h4>
-      <%= simple_form_for @user, html:{id: 'upavatar'} do |f| %>
+<%= simple_form_for @user, html: {id: 'upavatar'} do |f| %>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h4 class="info">Me</h4>
           <div class="avatar-container">
             <div class="avatar">
-              <%= image_tag(@user.avatar.url(:small)) %>
+              <%= image_tag(@user.avatar.url(:processors)) %>
               <%= f.input :avatar, label: false%>
             </div>
             <h5>选择头像</h5>
           </div>
-      <% end %>
+        </div>
+        <div class="col-md-4">2</div>
+        <div class="col-md-4">3</div>
+      </div>
     </div>
-    <div class="col-md-4">2</div>
-    <div class="col-md-4">3</div>
-  </div>
-</div>
-<%= simple_form_for @user, html:{id: 'cropavatar'} do |f| %>
-    <div class="modal" id="previews">
+<% end %>
+<%= simple_form_for @user, html: {id: 'cpavatar'}, remote: true do |f| %>
+    <div class="modal" data-backdrop="static">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title">头像剪切</h4>
           </div>
           <div class="modal-body">
-            <%= image_tag @user.avatar.url,id: 'avatarimage', class: 'img-responsive center-block' %>
           </div>
-          <%= f.input :avatar, as: :file, input_html: {style: "display:none"},label: false %>
           <input type="hidden" class="form-control" id="dataX" name="user[avatar_crop_x]" placeholder="x">
           <input type="hidden" class="form-control" id="dataY" name="user[avatar_crop_y]" placeholder="y">
           <input type="hidden" class="form-control" name="user[avatar_crop_w]" id="dataWidth" placeholder="width">
           <input type="hidden" class="form-control" name="user[avatar_crop_h]" id="dataHeight" placeholder="height">
           <div class="modal-footer">
-            <%= f.button :submit %>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <%= f.button :submit ,class: 'btn btn-primary' %>
           </div>
         </div>
       </div>
@@ -41,7 +41,6 @@
 
 <script>
     $(function () {
-        var $image = $('#avatarimage');
         var $dataX = $('#dataX');
         var $dataY = $('#dataY');
         var $dataHeight = $('#dataHeight');
@@ -51,7 +50,6 @@
         var $dataScaleY = $('#dataScaleY');
         var options = {
             aspectRatio: 1,
-            preview: '.img-preview',
             crop: function (e) {
                 $dataX.val(Math.round(e.x));
                 $dataY.val(Math.round(e.y));
@@ -61,14 +59,11 @@
                 $dataScaleX.val(e.scaleX);
                 $dataScaleY.val(e.scaleY);
             }
-
         };
-
         $('#user_avatar').change(function(){
             var data = new FormData();
             $.each($('#user_avatar')[0].files, function(index, value){
                 data.append('user[avatar]', value);
-                data.append('authenticity_token', $("#upavatar input[name='authenticity_token']").val());
             });
             $.ajax({
                 url: '<%= user_path%>.json',
@@ -77,15 +72,24 @@
                 type: 'PATCH',
                 contentType: false,
                 processData: false,
-                success: function(){
-
-//                    $('.modal').modal('show');
+                success: function(data){
+                    $('.avatar img').attr('src', data['avatar_small']);
+                    $('.modal-body').append('<img >');
+                    //$(".modal-body input[name='user[avatar]']").val(data['avatar_original']);
+                    $('.modal-body img').attr('src', data['avatar_original']);
+                    $('.modal').modal('show');
                 }
             });
         });
         $('.modal').on('shown.bs.modal', function () {
-            $image.cropper(options);
+            $('.modal-body img').cropper(options);
         });
-
+        $('.modal').on('hidden.bs.modal', function () {
+            $('.modal-body').empty();
+            $('#user_avatar').val('');
+        });
+        $('#cpavatar').submit(function(){
+            $('.modal').modal('hide');
+        });
     });
 </script>
