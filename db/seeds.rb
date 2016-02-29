@@ -125,9 +125,10 @@ puts '完成相片类型设定---------------'
 
 puts '测试用户设定开始---------------'
 50.times do |n|
-  User.find_or_create_by!(email: "user#{n}@mint.com") do |user|
+  User.find_or_create_by!(email: "user#{n+1}@mint.com") do |user|
     user.password = '11111111'
     user.password_confirmation = '11111111'
+    user.avatar= File.new("#{Rails.root}/public/system/avatars/#{n+1}.jpg")
   end
 end
 puts '完成测试用户设定---------------'

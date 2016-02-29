@@ -50,6 +50,8 @@
         var $dataScaleY = $('#dataScaleY');
         var options = {
             aspectRatio: 1,
+            viewMode:1,
+            zoomable: false,
             crop: function (e) {
                 $dataX.val(Math.round(e.x));
                 $dataY.val(Math.round(e.y));

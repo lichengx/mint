@@ -15,3 +15,4 @@
 //= require bootstrap-sprockets
 //= require dropzone.min
 //= require cropper.min
+//= require jquery.justifiedGallery.min

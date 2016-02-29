@@ -34,6 +34,7 @@ gem 'paperclip'
 gem 'papercrop'
 gem 'merit'
 gem 'geocoder'
+gem 'jquery-colorbox-rails'
 # end
 
 group :development do
