@@ -16,3 +16,5 @@
 //= require dropzone.min
 //= require cropper.min
 //= require jquery.justifiedGallery.min
+//= require jquery.colorbox
+//= require jquery.colorbox-zh-CN

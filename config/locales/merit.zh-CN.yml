@@ -1,0 +1,5 @@
+zh-CN:
+  merit:
+    granted_badge: "授予 %{badge_name} 徽章"
+    granted_points: "授予 %{points} 积分"
+    removed_badge: "去除 %{badge_name} 徽章"

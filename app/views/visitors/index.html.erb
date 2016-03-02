@@ -1,15 +1,23 @@
 <div class="container">
   <div id="basicExample">
     <%= User.find_each(batch_size: 10) do |u| %>
-        <a href="<%= u.avatar.url %>" rel="gallery1">
-          <img alt="<%= u.name %>" src="<%= u.avatar.url %>" />
-        </a>
+        <div>
+          <% if user_signed_in? %>
+          <a href="<%= u.avatar.url %>" rel="gallery1">
+            <img alt="<%= u.name %>" src="<%= u.avatar.url(:medium) %>"/>
+          </a>
+          <% else %>
+          <img alt="<%= u.name %>" src="<%= u.avatar.url(:medium) %>"/>
+          <% end %>
+          <div class="caption">
+            follow me:<%= u.email %>
+            I'm <span style="color:red">a</span> <strong>custom</strong> caption!
+            <div>I'm a div</div>
+          </div>
+        </div>
     <% end %>
   </div>
 </div>
-
-
-
 <script>
     $('#basicExample').justifiedGallery({
         lastRow : 'hide',
@@ -18,6 +26,7 @@
         margins : 5,
         randomize: true
     }).on('jg.complete', function () {
+        <% if user_signed_in? %>
         $(this).find('a').colorbox({
             maxWidth : '80%',
             maxHeight : '80%',
@@ -25,5 +34,10 @@
             transition : 'elastic',
             current : ''
         });
+        <% else %>
+        $(this).find('img').click(function(){
+            location.href = '<%= new_user_session_path %>';
+        });
+        <% end %>
     });
 </script>
