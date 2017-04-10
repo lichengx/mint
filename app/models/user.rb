@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   after_initialize :set_default_role, :if => :new_record?
   belongs_to :role
   has_many :galleries
+  has_many :data_contents
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

@@ -1,0 +1,6 @@
+<%= simple_form_for @user, html: {id: 'upitem'} do |f| %>
+    @data_items.each
+    <%= f.input :username %>
+    <%= f.input :password %>
+    <%= f.button :submit %>
+<% end %>

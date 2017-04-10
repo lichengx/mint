@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128031331) do
+ActiveRecord::Schema.define(version: 20160703133532) do
 
   create_table "badges_sashes", force: :cascade do |t|
     t.integer  "badge_id",      limit: 4
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 20160128031331) do
   add_index "badges_sashes", ["badge_id", "sash_id"], name: "index_badges_sashes_on_badge_id_and_sash_id", using: :btree
   add_index "badges_sashes", ["badge_id"], name: "index_badges_sashes_on_badge_id", using: :btree
   add_index "badges_sashes", ["sash_id"], name: "index_badges_sashes_on_sash_id", using: :btree
+
+  create_table "contents", force: :cascade do |t|
+    t.text     "content",    limit: 65535
+    t.integer  "state_id",   limit: 4
+    t.integer  "type_id",    limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "contents", ["state_id"], name: "index_contents_on_state_id", using: :btree
+  add_index "contents", ["type_id"], name: "index_contents_on_type_id", using: :btree
+  add_index "contents", ["user_id"], name: "index_contents_on_user_id", using: :btree
 
   create_table "galleries", force: :cascade do |t|
     t.integer  "user_id",              limit: 4
@@ -178,6 +191,9 @@ ActiveRecord::Schema.define(version: 20160128031331) do
 
   add_index "visitors", ["state_id"], name: "index_visitors_on_state_id", using: :btree
 
+  add_foreign_key "contents", "states"
+  add_foreign_key "contents", "types"
+  add_foreign_key "contents", "users"
   add_foreign_key "galleries", "states", column: "picture_type_id"
   add_foreign_key "galleries", "users"
   add_foreign_key "states", "types"

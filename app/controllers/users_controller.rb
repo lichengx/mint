@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @data_items = DataItem.all
     authorize @user
   end
 

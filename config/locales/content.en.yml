@@ -1,0 +1,16 @@
+en:
+  activerecord:
+    models:
+      content: "Content"
+      data_content: "DataContent"
+    attributes:
+      content:
+        content: "Content"
+        type: "Type"
+        state: "State"
+        user: "User"
+      data_content:
+        content: "Content"
+        type: "Type"
+        state: "State"
+        user: "User"

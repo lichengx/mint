@@ -1,0 +1,16 @@
+zh-CN:
+  activerecord:
+    models:
+      content: "内容"
+      data_content: "资料内容"
+    attributes:
+      content:
+        content: "内容"
+        type: "类型"
+        state: "状态"
+        user: "用户"
+      data_content:
+        content: "内容"
+        type: "类型"
+        state: "状态"
+        user: "用户"

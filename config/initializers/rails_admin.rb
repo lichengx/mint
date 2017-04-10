@@ -48,7 +48,8 @@ RailsAdmin.config do |config|
                             'VisitorOption','VisitorOption::Translation',
                             'DataType','DataType::Translation',
                             'DataItem','DataItem::Translation',
-                            'PictureType','PictureType::Translation']
+                            'PictureType','PictureType::Translation',
+                            'Content','DataContent']
 
   config.model 'User' do
     exclude_fields :created_at, :updated_at
@@ -149,4 +150,11 @@ RailsAdmin.config do |config|
     include_fields :locale, :title, :description
   end
 
+  config.model 'Content' do
+    exclude_fields :created_at, :updated_at
+  end
+
+  config.model 'DataContent' do
+    exclude_fields :created_at, :updated_at
+  end
 end

@@ -4,4 +4,5 @@ class State < ActiveRecord::Base
   translation_class.validates :title, presence: true
 
   belongs_to :type
+  has_many :contents
 end
